@@ -1,13 +1,25 @@
-<h1>Pokemon Cards</h1>
-
-<ul class="list-unstyled">
-  <% @cards.each do |card| %>
-    <li><h3><%=card.title%></h3></li>
-    <li><strong>Details:</strong></li>
-    <li><%=card.description%></li>
-    <br>
-    <li><strong>price:</strong> <%=card.ppd%> € per day</li>
-    <li><strong>vendor:</strong> <%=card.user.username%></li>
-    <br>
-  <% end %>
-</ul>
+<body class="bg-light">
+  <h2 class="text-center my-4"><strong>Pokemon Cards</strong></h2>
+  <div class="container">
+    <div class="row">
+      <% @cards.each do |card| %>
+        <div class="col-md-3 mb-4">
+          <%= link_to card_path(card) do %>
+            <div class="card h-100 bg-white">
+              <div class="card-body">
+                <img class="card_images" src="https://i.etsystatic.com/9235907/r/il/1c51e7/1222367197/il_fullxfull.1222367197_7j22.jpg" alt="Pikachu">
+                <div>
+                  <h3 class="card-title text-center my-2"><strong><%= card.title %></strong></h3>
+                  <p class="card-text"><strong>Details:</strong> <%= card.description %></p>
+                  <p class="card-text"><strong>Price:</strong> <strong><%= card.ppd %>€</strong> per day</p>
+                  <p class="card-text"><strong>Vendor:</strong> <%= card.user.username %></p>
+            <% end %>
+                  <button class="btn btn-dark mt-2">Rent</button>
+                </div>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
