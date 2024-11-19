@@ -2,12 +2,12 @@
 
 <ul class="list-unstyled">
   <% @cards.each do |card| %>
-  <li><h3><%=card.title%></h3></li>
-  <li><strong>Details:</strong></li>
-  <li><%=card.description%></li>
-  <br>
-  <li><strong>price:</strong> <%=card.ppd%> € per day</li>
-  <li><strong>vendor:</strong> <%=card.user.username%></li>
-  <br>
+    <li><h3><%=card.title%></h3></li>
+    <li><strong>Details:</strong></li>
+    <li><%=card.description%></li>
+    <br>
+    <li><strong>price:</strong> <%=card.ppd%> € per day</li>
+    <li><strong>vendor:</strong> <%=card.user.username%></li>
+    <br>
   <% end %>
 </ul>

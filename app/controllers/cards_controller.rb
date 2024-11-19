@@ -13,8 +13,12 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(card_params)
-    @card.save
-    redirect_to card_path
+    @card.user = current_user
+      if @card.save
+        redirect_to card_path(@card)
+      else
+        render :new, status: :unprocessable_entity
+      end
   end
 
   def destroy
