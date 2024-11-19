@@ -1,1 +1,57 @@
 // Specific CSS for your home-page
+.navbar-poke {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ddd;
+}
+
+.navbar-poke .navbar-brand img {
+  width: 110px;
+  height: auto;
+
+}
+
+.navbar-poke .navbar-nav .btn-login {
+  background-color: #333;
+  color: #fff;
+  border-radius: 18px;
+  padding: 4px 15px;
+  border: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-poke .navbar-nav .btn-signin {
+  background-color: #f8c8d7;
+  color: #333;
+  border-radius: 18px;
+  padding: 4px 15px;
+  border: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-poke .navbar-nav .btn-login:hover {
+  background-color: #444444;
+  color: #fff;
+}
+
+.navbar-poke .navbar-nav .btn-signin:hover {
+  background-color: #f3a7b8;
+  color: #454444;
+}
+
+
+.navbar-poke .navbar-nav .btn + .btn {
+  margin-left: 10px;
+}
+
+.btn-login, .btn-signin {
+  font-weight: bold;
+}
+
+
+.navbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
