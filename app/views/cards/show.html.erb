@@ -1,48 +1,24 @@
-<div class="bg-lite">
+<body class="bg-lite">
   <div class="container mt-4">
-    <div class="card bg-white d-flex justify-content-between">
+    <div class="bg-white d-flex justify-content-between">
       <%= cl_image_tag @card.photo.key, width: 400, crop: :fill, class:"card_image" %>
-      <div class="card-body">
-        <h3 class="card-title my-2"><strong><%= @card.title %></strong></h3>
-        <p class="card-text"><strong>Price: </strong><strong><%= @card.ppd %>€</strong> per day</p>
-        <p class="card-text"><strong>Vendor: </strong><u><%= @card.user.username %></u></p>
-        <p class="card-text"><strong>Details:</strong> <%= @card.description %>
-        <br>
-        <br>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-        </p>
-        <button class="btn btn-dark mt-2">Rent</button>
+        <div class="card-body pb-3 pr-3">
+          <h3 class="card-title my-2 pt-3"><strong><%= @card.title %></strong></h3>
+          <p class="card-text"><strong>Price: </strong><strong><%= @card.ppd %>€</strong> per day</p>
+          <p class="card-text"><strong>Vendor: </strong><u><%= @card.user.username %></u></p>
+          <p class="card-text"><strong>Details:</strong> <%= @card.description %>
+          <br>
+          <br>
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+          </p>
+          <button class="btn btn-dark mt-2">Rent</button>
+        </div>
       </div>
-    </div>
+   </div>
 
 
 
-
-
-
-
-
-
-
-
-    <div class="card bg-white d-flex justify-content-between">
-      <%= cl_image_tag @card.photo.key, width: 400, crop: :fill, class:"card_image" %>
-      <div class="card-body">
-        <h3 class="card-title my-2"><strong><%= @card.title %></strong></h3>
-        <p class="card-text"><strong>Price: </strong><strong><%= @card.ppd %>€</strong> per day</p>
-        <p class="card-text"><strong>Vendor: </strong><u><%= @card.user.username %></u></p>
-        <p class="card-text"><strong>Details:</strong> <%= @card.description %>
-        <br>
-        <br>
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-        </p>
-        <button class="btn btn-dark mt-2">Rent</button>
-      </div>
-    </div>
-
-
-
-
+   <div class= "container">
      <div class="row">
        <h3 class="reviews my-2"><strong>Reviews</strong></h3>
           <div class="card bg-white">
@@ -71,4 +47,5 @@
 
     </div>
     </div>
-</div>
+</body>
+g
