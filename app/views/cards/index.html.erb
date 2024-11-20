@@ -7,7 +7,9 @@
           <%= link_to card_path(card) do %>
             <div class="card h-100 bg-white">
               <div class="card-body">
-                <img class="card_images" src="https://i.etsystatic.com/9235907/r/il/1c51e7/1222367197/il_fullxfull.1222367197_7j22.jpg" alt="Pikachu">
+                <div class ="img-fluid">
+                <%= cl_image_tag card.photo.key, width: 400, crop: :fill, class:"index_images" %>
+                </div>
                 <div>
                   <h3 class="card-title text-center my-2"><strong><%= card.title %></strong></h3>
                   <p class="card-text"><strong>Details:</strong> <%= card.description %></p>
