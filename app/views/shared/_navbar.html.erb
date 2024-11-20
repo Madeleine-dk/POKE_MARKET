@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
 
           <li class="nav-item dropdown">
-            <%= image_tag "Maddie", class: "Profile_rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "Maddie.jpeg", class: "Profile_rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
