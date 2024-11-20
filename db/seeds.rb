@@ -10,8 +10,8 @@
 require 'faker'
 
 puts "Cleaning database..."
-User.destroy_all
 Card.destroy_all
+User.destroy_all
 
 puts 'Creating 5 fake users with 5 fake cards each...'
 5.times do
@@ -26,7 +26,18 @@ puts 'Creating 5 fake users with 5 fake cards each...'
   user.save!
 end
 
-User.all.each do |user|
-  Card.create!(title: "Pikachu", description: "This Pikachu card is #60/64 from the Jungle set. The card was released on January 16, 1999. The artwork is by Ken Sugimori. The rarity of the card is Common.", ppd: 5, user: user)
-  Card.create!(title: "Charizard", description: "This card is in terrible condition, as you can see from the photographs. It appears someone has tried to ‘repair’ this card, by glueing another card on to the back.", ppd: 4, user: user)
+Pokemon.configure do |config|
+  config.api_key = "926278ac-a2fc-49e1-b7a9-8d01c3a520ea"
 end
+
+cards = Pokemon::Card.where(page: 1, pageSize: 1000)
+p cards
+p cards.count
+
+
+cards.each do |card|
+  Card.create!(title: card.name, description: card.flavor_text, ppd: card.cardmarket.prices.average_sell_price, user: User.all.sample)
+end
+
+# change index:
+# setup Cloudinary and link to API (check doc)
