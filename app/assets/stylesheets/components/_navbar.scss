@@ -10,3 +10,68 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-poke {
+  background-color: #ffffff;
+  border-bottom: 2px solid #ddd;
+}
+
+.navbar-poke .navbar-brand img {
+  width: 150px;
+  height: auto;
+
+}
+
+.navbar-poke .navbar-nav .btn-login {
+  background-color: #333;
+  color: #fff;
+  border-radius: 18px;
+  padding: 7px 35px;
+  border: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-poke .navbar-nav .btn-signin {
+  background-color: #f8c8d7;
+  color: #333;
+  border-radius: 18px;
+  padding: 7px 35px;
+  border: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-poke .navbar-nav .btn-login:hover {
+  background-color: #444444;
+  color: #fff;
+}
+
+.navbar-poke .navbar-nav .btn-signin:hover {
+  background-color: #f3a7b8;
+  color: #454444;
+}
+
+
+.navbar-poke .navbar-nav .btn + .btn {
+  margin-left: 15px;
+}
+
+.btn-login, .btn-signin {
+  font-weight: bold;
+}
+
+
+.navbar {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  padding: 20px 0;
+}
+.Profile_rounded {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
