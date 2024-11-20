@@ -9,16 +9,28 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-        <%= link_to new_user_session_path do %>
-          <button class="btn btn-login me-2" type="button"><strong>Login</strong></button>
+
+      <% if user_signed_in? %>
+
+          <li class="nav-item dropdown">
+            <%= image_tag "Maddie", class: "Profile_rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
+        <% else %>
+         <li class="nav-item">
+            <%= link_to new_user_session_path do %>
+              <button class="btn btn-login me-2" type="button"><strong>Login</strong></button>
+            <% end %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to new_user_registration_path do %>
+              <button class="btn btn-signin" type="button"><strong>Sign Up</strong></button>
+            <% end %>
+          </li>
         <% end %>
-        </li>
-        <li class="nav-item">
-        <%= link_to new_user_registration_path do %>
-          <button class="btn btn-signin" type="button"><strong>Sign Up</strong></button>
-         <% end %>
-        </li>
       </ul>
     </div>
   </div>
