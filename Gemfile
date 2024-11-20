@@ -30,6 +30,8 @@ gem "devise"
 
 gem "faker"
 
+gem 'pokemon_tcg_sdk'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
