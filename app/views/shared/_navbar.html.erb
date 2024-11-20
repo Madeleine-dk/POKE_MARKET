@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-poke">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <%= image_tag "Pokemarket" %>
+      <%= image_tag "Pokemarket.jpeg" %>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
 
           <li class="nav-item dropdown">
-            <%= image_tag "Maddie", class: "Profile_rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "Maddie.jpeg", class: "Profile_rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
             </div>
