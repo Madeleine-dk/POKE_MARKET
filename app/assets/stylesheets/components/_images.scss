@@ -1,5 +1,13 @@
-.card_images {
+.card_image {
+  width: 18vw;
+  height: auto;
+  padding: 20px
+}
+
+.index_images {
   width: 95%;
+  height: auto;
+  justify-content: center;
   border-radius: 2%;
   display: block;
   margin: 0 auto;
