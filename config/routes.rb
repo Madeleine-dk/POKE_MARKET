@@ -9,8 +9,9 @@ Rails.application.routes.draw do
 
   resources :cards, only: %i[index show new create destroy]
   resources :users, only: [:show]
-
-
+  resources :card, only: [:show] do
+    resources :reviews, only: [:create]
+  end
   # Defines the root path route ("/")
   # root "posts#index"
 end

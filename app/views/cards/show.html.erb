@@ -3,42 +3,35 @@
     <img src="https://i.etsystatic.com/9235907/r/il/1c51e7/1222367197/il_fullxfull.1222367197_7j22.jpg"  alt="Pikachu">
       <div class="card bg-white">
         <div class="card-body">
-          <h3 class="card-title my-2"><strong>Pikachu</strong></h3>
+          <h3 class="card-title my-2"><strong> card.title</strong></h3>
           <p class="card-text"><strong>Price:</strong><strong> 5€</strong> per day</p>
           <p class="card-text"><strong>Vendor:</strong><strong> Ash Ketchum</strong></p>
           <p class="card-text"><strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           <button class="btn btn-dark mt-2">Rent</button>
+
         </div>
        </div>
    </div>
    <div class= "container">
      <div class="row">
        <h3 class="reviews my-2"><strong>Reviews</strong></h3>
+         <% @reviews.each do |review| %>
           <div class="card bg-white">
             <div class="review-body">
-              <p class="review-text"><strong>Rating:</strong> 5/5</p>
-              <p class="review-text"><strong>Comment:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p class="review-text"><strong>Rating:</strong> <%= review.rating %></p>
+              <p class="review-text"><strong>Comment:</strong> <%= review.comment %></p>
             </div>
           </div>
+          <%end%>
         </div>
-          <form>
-    <div class="mb-3">
-      <label for="reviewName" class="form-label">Your Name</label>
-      <input type="text" class="form-control" id="reviewName" placeholder="Enter your name">
-    </div>
-    <div class="mb-3">
-      <label for="reviewRating" class="form-label">Your Rating</label>
-      <label for="comment" class="form-label">Your Comment</label>
-      <select class="form-select" id="reviewRating">
-        <option value="5">★★★★★</option>
-        <option value="4">★★★★☆</option>
-        <option value="3">★★★☆☆</option>
-        <option value="2">★★☆☆☆</option>
-        <option value="1">★☆☆☆☆</option>
-      </select>
-      <button type="submit" class="btn btn-primary">Submit Review</button>
-
-    </div>
-    </div>
+        <%= simple_form_for [@card, @review] do |f| %>
+            <div class="mb-3">
+              <%= f.input :rating, collection: [['★★★★★', 5], ['★★★★☆', 4], ['★★★☆☆', 3], ['★★☆☆☆', 2], ['★☆☆☆☆', 1]], label: 'Your Rating', input_html: { class: 'form-select' } %>
+            </div>
+            <div class="mb-3">
+              <%= f.input :comment, as: :text, label: 'Your Comment', input_html: { class: 'form-control', rows: 3 } %>
+            </div>
+              <%= f.button :submit, 'Submit Review', class: 'btn btn-primary' %>
+        <% end %>
+   </div>
 </body>
-g
