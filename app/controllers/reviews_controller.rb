@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-
   def create
     @review = Review.new(review_params)
     @card = Card.find(params[:card_id])
