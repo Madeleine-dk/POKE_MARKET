@@ -8,11 +8,60 @@
 
 .review-body h5 {
   font-size: 1.2rem;        /* Larger, bold title */
-  color: #333;             /* Dark text */
+  color: #020202;             /* Dark text */
 }
 
 .review-body {
   font-size: 1rem;         /* Consistent text size */
   color: #555;             /* Softer color for text */
   margin: 0;               /* Remove extra spacing */
+}
+
+.boxes {
+  border-radius: 6px;
+}
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #58afd1;
+  color: #58afd1;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem "Roboto Slab", sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+}
+
+.draw-border::before, .draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #5A2951;
+  box-shadow: inset 0 0 0 4px #5A2951;
+}
+
+.draw-border:hover::before, .draw-border:hover::after {
+  border-color: #5A2951;
 }

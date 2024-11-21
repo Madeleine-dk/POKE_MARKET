@@ -19,7 +19,7 @@
 .navbar-poke .navbar-brand img {
   width: 150px;
   height: auto;
-
+  border-radius: 5px;
 }
 
 .navbar-poke .navbar-nav .btn-login {
@@ -57,8 +57,9 @@
   margin-left: 15px;
 }
 
-.btn-login, .btn-signin {
-  font-weight: bold;
+.btn-login {
+  background-color: #5A2951;
+  color: white;
 }
 
 .btn-login:hover, .btn-signin:hover {
@@ -81,7 +82,6 @@
   border: 2px solid #333;
 }
 
-
 .moving-gif {
   position: relative;
   width: 100%;
@@ -99,4 +99,8 @@
   100% {
     left: 95%;
   }
+}
+
+.btn-signup {
+  background-color: #f3a7b8;
 }
