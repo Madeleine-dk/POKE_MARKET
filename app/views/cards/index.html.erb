@@ -1,5 +1,9 @@
 <body class="background">
   <div class="login text-center m-2">
+<div class="floating-image-container">
+      <%= image_tag "clipart389400.png", width: 150 %>
+    </div>
+  <h2 class="text-center"style="margin-top: -27px;"><%= image_tag "pokemoncardtext.png", width: 300, height: 100 %></h2>
     <% if logged_in? %>
       <h3>Hey, <strong><%= current_user.username %></strong> 🫡</h3>
       <p>Browse the latest cards available, from our top-notch vendors!</p>
@@ -7,7 +11,8 @@
       <p>Welcome, Guest! Login to rent cards</p>
     <% end %>
   </div>
-  <h2 class="text-center my-4"><strong>Pokemon Cards</strong></h2>
+
+
   <div class="container">
     <div class="row">
       <% @cards.each do |card| %>

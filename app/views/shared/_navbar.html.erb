@@ -1,11 +1,29 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-poke">
+<div class="navbar navbar-expand-sm navbar-light navbar-poke" style="padding-bottom: 0;">
   <div class="container-fluid">
     <a class="navbar-brand" href="<%= root_path %>">
       <%= image_tag "Pokemarket.jpeg" %>
     </a>
-    <div class="floating-image-container">
-      <%= image_tag "clipart389400.png", width: 50 %>
+    <div class="container">
+  <div class="row justify-content-center" style="margin-top: -45px;">
+    <div class="col-sm-8 my-3">
+  <div class="moving-gif">
+      <%= image_tag "pikachu-pokemon.gif", width: 50 %>
     </div>
+      <%= form_with url: cards_path, method: :get, class: "d-flex mt-5" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "🔍"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+  </div>
+
+
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

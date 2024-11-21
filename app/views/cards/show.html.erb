@@ -39,7 +39,7 @@
           </div>
         </div>
     </div>
-
+    
     <div class= "bg-white my-4 boxes">
       <div class="pt-2 pb-4 px-4">
       <div class="my-2">
@@ -47,7 +47,7 @@
           <% @reviews.each do |review| %>
 
               <div class="review-body">
-                <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeballs.png", width: 20) * review.rating %></p>
+                <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeball-png-45330.png", width: 20) * review.rating %></p>
                 <p class="review-text"><strong>Comment:</strong> <%= review.comment %></p>
               </div>
 

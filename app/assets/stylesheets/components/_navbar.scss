@@ -82,21 +82,22 @@
   border: 2px solid #333;
 }
 
-.floating-image-container {
-  position: relative; /* Keeps the image container positioned relative to the page */
-  width: 100%;        /* Full-width container */
-  text-align: center; /* Centers the image horizontally */
-  animation: bounce 3s infinite ease-in-out;
-  margin-bottom: -10px;
- /* Adjust to position the image vertically */
+.moving-gif {
+  position: relative;
+  width: 100%;
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0); /* Original position */
+.moving-gif img {
+  position: absolute;
+  animation: move-horizontal 5s linear infinite;
+}
+
+@keyframes move-horizontal {
+  0% {
+    left: -5%;
   }
-  50% {
-    transform: translateY(-20px); /* Moves up 20px */
+  100% {
+    left: 95%;
   }
 }
 
