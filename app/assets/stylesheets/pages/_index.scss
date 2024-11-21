@@ -9,4 +9,26 @@
 
 .card-body {
   background-color: #FFB4D5;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.floating-image-container {
+  position: relative; /* Keeps the image container positioned relative to the page */
+  width: 100%;        /* Full-width container */
+  text-align: center; /* Centers the image horizontally */
+  animation: bounce 3s infinite ease-in-out;
+  margin-bottom: -10px;
+ /* Adjust to position the image vertically */
+}
+
+
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Original position */
+  }
+  50% {
+    transform: translateY(-20px); /* Moves up 20px */
+  }
 }

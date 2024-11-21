@@ -2,6 +2,10 @@ class CardsController < ApplicationController
   def index
     @cards = Card.all
     @cards = Card.order(created_at: :desc)
+      if params[:query].present?
+        sql_subquery = "title ILIKE :query OR description ILIKE :query"
+        @cards = @cards.where(sql_subquery, query: "%#{params[:query]}%")
+      end
   end
 
   def show

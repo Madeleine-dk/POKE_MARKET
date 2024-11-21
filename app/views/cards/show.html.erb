@@ -34,7 +34,7 @@
          <% @reviews.each do |review| %>
 
             <div class="review-body">
-              <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeballs.png", width: 20) * review.rating %></p>
+              <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeball-png-45330.png", width: 20) * review.rating %></p>
               <p class="review-text"><strong>Comment:</strong> <%= review.comment %></p>
             </div>
 
@@ -48,7 +48,7 @@
             <div class="mb-3">
               <%= f.input :comment, as: :text, label: 'Your Comment', input_html: { class: 'form-control', rows: 3 } %>
             </div>
-      
+
               <%= f.button :submit, 'Submit Review', class: 'btn btn-dark btn-outline-dark mt-2' %>
         <% end %>
       <% else %>
