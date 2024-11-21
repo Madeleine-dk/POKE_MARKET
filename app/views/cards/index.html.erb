@@ -1,7 +1,8 @@
 <body class="bg-light">
   <div class="login text-center m-2">
     <% if logged_in? %>
-      <p>Welcome, <%= current_user.username %>!</p>
+      <h3>Hey, <strong><%= current_user.username %></strong> 🫡</h3>
+      <p>Browse the latest cards available, from our top-notch vendors!</p>
     <% else %>
       <p>Welcome, Guest! Login to rent cards</p>
     <% end %>

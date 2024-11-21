@@ -7,6 +7,7 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     @reviews = @card.reviews
     @review = Review.new
+    @rental = Rental.new
   end
 
   def new
