@@ -28,7 +28,7 @@
          <% @reviews.each do |review| %>
 
             <div class="review-body">
-              <p class="review-text"><strong>Rating:</strong> <%= "★" * review.rating %></p>
+              <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeballs.png", width: 20) * review.rating %></p>
               <p class="review-text"><strong>Comment:</strong> <%= review.comment %></p>
             </div>
 
