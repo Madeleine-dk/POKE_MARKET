@@ -14,7 +14,7 @@ puts "Cleaning database..."
 Card.destroy_all
 User.destroy_all
 
-puts 'Creating 5 fake users with 5 fake cards each...'
+puts 'Creating pokemon cards...'
 5.times do
   user = User.new(
     first_name: Faker::Name.first_name,
