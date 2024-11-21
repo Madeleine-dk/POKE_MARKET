@@ -1,59 +1,73 @@
 <body class="background">
-  <div class="container mt-4">
-    <div class="bg-white d-flex justify-content-between">
-      <%= cl_image_tag @card.photo.key, width: 400, crop: :fill, class:"card_image" %>
+  <div class="container">
+    <div class="mt-4">
+      <div class="bg-white d-flex justify-content-between pt-2 pb-4 px-4 boxes">
+        <%= cl_image_tag @card.photo.key, width: 400, crop: :fill, class:"card_image" %>
 
-        <div class="card-body pb-3 pr-5 bg-white" id="card-color">
-          <h3 class="card-title my-2 pt-3"><strong><%= @card.title %></strong></h3>
-          <p class="card-text"><strong>Price: </strong><strong><%= @card.ppd %>€</strong> per day</p>
-          <p class="card-text"><strong>Vendor: </strong><u><%= @card.user.username %></u></p>
-          <p class="card-text"><strong>Details:</strong> <%= @card.description %>
-          <br>
-          <br>
-          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
-          </p>
-          <% if logged_in? %>
-            <%= simple_form_for([@card, @rental]) do |f| %>
-              <%= f.input :start_date, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
-              <%= f.input :end_date, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: false, wrapper_html: { class: "inline_field_wrapper" } %>
-              <%= f.submit "Rent", class: "btn btn-dark btn-outline-dark mt-2 btn-block btn-booking" %>
-            <% end %>
-          <% else %>
-            <%= link_to new_user_session_path do %>
-              <button class="btn btn-login me-2" type="button"><strong>Login</strong></button>
-            <% end %>
-        <% end %>
+          <div class="card-body pb-3 pr-5 bg-white" id="card-color">
+            <h3 class="card-title my-2 pt-3"><strong><%= @card.title %></strong></h3>
+            <p class="card-text"><strong>Price: </strong><strong><%= @card.ppd %>€</strong> per day</p>
+            <p class="card-text"><strong>Vendor: </strong><u><%= @card.user.username %></u></p>
+            <p class="card-text"><strong>Details:</strong> <%= @card.description %>
+            <br>
+            <br>
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.
+            </p>
+            <% if logged_in? %>
+                <%= simple_form_for([@card, @rental]) do |f| %>
+                  <div class="d-flex gap-2 align-items-center">
+                    <%= f.input :start_date,
+                                as: :string,
+                                label: "From",
+                                placeholder: "Start Date",
+                                wrapper_html: { class: "form-group mb-0 flex-grow-1" },
+                                input_html: { class: "form-control review-body", data: { controller: "datepicker" } } %>
+                    <%= f.input :end_date,
+                                as: :string,
+                                label: "To",
+                                placeholder: "End Date",
+                                wrapper_html: { class: "form-group mb-0 flex-grow-1" },
+                                input_html: { class: "form-control review-body", data: { controller: "datepicker" } } %>
+                  </div>
+                  <%= f.submit "Rent", class: "btn draw-border" %>
+                <% end %>
+            <% else %>
+              <%= link_to new_user_session_path do %>
+                <button class="btn btn-login me-2" type="button">Login</button>
+              <% end %>
+          <% end %>
+          </div>
         </div>
-      </div>
-   </div>
-
-   <div class= "container bg-white my-4">
-    <div class="pb-4">
-     <div class="row">
-       <h3 class="reviews my-2"><strong>Reviews</strong></h3>
-         <% @reviews.each do |review| %>
-
-            <div class="review-body">
-              <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeballs.png", width: 20) * review.rating %></p>
-              <p class="review-text"><strong>Comment:</strong> <%= review.comment %></p>
-            </div>
-
-          <%end%>
-        </div>
-       <% if logged_in? %>
-        <%= simple_form_for [@card, @review] do |f| %>
-            <div class="mb-3">
-              <%= f.input :rating, collection: [['★★★★★', 5], ['★★★★☆', 4], ['★★★☆☆', 3], ['★★☆☆☆', 2], ['★☆☆☆☆', 1]], label: 'Your Rating', input_html: { class: 'form-select' } %>
-            </div>
-            <div class="mb-3">
-              <%= f.input :comment, as: :text, label: 'Your Comment', input_html: { class: 'form-control', rows: 3 } %>
-            </div>
-      
-              <%= f.button :submit, 'Submit Review', class: 'btn btn-dark btn-outline-dark mt-2' %>
-        <% end %>
-      <% else %>
-        <p class="text-center">Please <%= link_to 'login', new_user_session_path %> to leave a review</p>
-      <% end %>
     </div>
 
+    <div class= "bg-white my-4 boxes">
+      <div class="pt-2 pb-4 px-4">
+      <div class="my-2">
+        <h3 class="reviews my-2"><strong>Reviews</strong></h3>
+          <% @reviews.each do |review| %>
+
+              <div class="review-body">
+                <p class="review-text"><strong>Rating:</strong> <%= (image_tag "pokeballs.png", width: 20) * review.rating %></p>
+                <p class="review-text"><strong>Comment:</strong> <%= review.comment %></p>
+              </div>
+
+            <%end%>
+          </div>
+        <% if logged_in? %>
+          <%= simple_form_for [@card, @review] do |f| %>
+              <div class="mb-3">
+                <%= f.input :rating, collection: [['★★★★★', 5], ['★★★★☆', 4], ['★★★☆☆', 3], ['★★☆☆☆', 2], ['★☆☆☆☆', 1]], label: 'Your Rating', input_html: { class: 'form-select review-body' } %>
+              </div>
+              <div class="mb-3">
+                <%= f.input :comment, as: :text, label: 'Your Comment', input_html: { class: 'form-control review-body', rows: 3 } %>
+              </div>
+
+                <%= f.button :submit, 'Submit Review', class: 'btn draw-border mt-2' %>
+          <% end %>
+        <% else %>
+          <p class="text-center">Please <%= link_to 'login', new_user_session_path %> to leave a review</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </body>

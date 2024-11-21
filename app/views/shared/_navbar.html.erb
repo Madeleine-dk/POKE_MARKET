@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-poke">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="<%= root_path %>">
       <%= image_tag "Pokemarket.jpeg" %>
     </a>
     <div class="floating-image-container">
@@ -24,13 +24,13 @@
         <% else %>
          <li class="nav-item">
             <%= link_to new_user_session_path do %>
-              <button class="btn btn-login me-2" type="button"><strong>Login</strong></button>
+              <button class="btn text-white me-2" type="button"><strong>Login</strong></button>
             <% end %>
           </li>
 
           <li class="nav-item">
             <%= link_to new_user_registration_path do %>
-              <button class="btn btn-signin" type="button"><strong>SignUp</strong></button>
+              <button class="btn text-dark btn-signup" type="button"><strong>Signup</strong></button>
             <% end %>
           </li>
         <% end %>

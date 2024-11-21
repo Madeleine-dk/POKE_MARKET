@@ -19,7 +19,7 @@
 .navbar-poke .navbar-brand img {
   width: 150px;
   height: auto;
-
+  border-radius: 5px;
 }
 
 .navbar-poke .navbar-nav .btn-login {
@@ -57,8 +57,9 @@
   margin-left: 15px;
 }
 
-.btn-login, .btn-signin {
-  font-weight: bold;
+.btn-login {
+  background-color: #5A2951;
+  color: white;
 }
 
 .btn-login:hover, .btn-signin:hover {
@@ -90,8 +91,6 @@
  /* Adjust to position the image vertically */
 }
 
-
-
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0); /* Original position */
@@ -99,4 +98,8 @@
   50% {
     transform: translateY(-20px); /* Moves up 20px */
   }
+}
+
+.btn-signup {
+  background-color: #f3a7b8;
 }
