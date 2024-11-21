@@ -3,6 +3,9 @@
     <a class="navbar-brand" href="#">
       <%= image_tag "Pokemarket.jpeg" %>
     </a>
+    <div class="floating-image-container">
+      <%= image_tag "clipart389400.png", width: 50 %>
+    </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,7 +14,7 @@
       <ul class="navbar-nav ms-auto">
 
       <% if user_signed_in? %>
-
+        <%= link_to "Upload", new_card_path, class: "btn btn-success me-2" %>
           <li class="nav-item dropdown">
             <%= image_tag "Maddie.jpeg", class: "Profile_rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -27,7 +30,7 @@
 
           <li class="nav-item">
             <%= link_to new_user_registration_path do %>
-              <button class="btn btn-signin" type="button"><strong>Sign Up</strong></button>
+              <button class="btn btn-signin" type="button"><strong>SignUp</strong></button>
             <% end %>
           </li>
         <% end %>

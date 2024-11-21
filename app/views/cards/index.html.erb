@@ -1,4 +1,4 @@
-<body class="bg-light">
+<body class="background">
   <div class="login text-center m-2">
     <% if logged_in? %>
       <h3>Hey, <strong><%= current_user.username %></strong> 🫡</h3>
@@ -19,7 +19,7 @@
                 <%= cl_image_tag card.photo.key, width: 400, crop: :fill, class:"index_images" %>
                 </div>
                 <div>
-                  <h3 class="card-title text-center my-2"><strong><%= card.title %></strong></h3>
+                  <h3 class="card-title text-center my-2" id="card-title-color"><strong><%= card.title %></strong></h3>
                   <p class="card-text"><strong>Details:</strong> <%= card.description %></p>
                   <p class="card-text"><strong>Price:</strong> <strong><%= card.ppd %>€</strong> per day</p>
                   <p class="card-text"><strong>Vendor:</strong> <%= card.user.username %></p>

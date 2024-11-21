@@ -1,0 +1,18 @@
+.review-body{
+  border: 1px solid #e0e0e0; /* Subtle border */
+  border-radius: 8px;        /* Rounded corners */
+  background-color: #f9f9f9; /* Light background */
+  padding: 16px;            /* Add some spacing */
+  margin-bottom: 16px !important;    /* Space between reviews */
+}
+
+.review-body h5 {
+  font-size: 1.2rem;        /* Larger, bold title */
+  color: #333;             /* Dark text */
+}
+
+.review-body {
+  font-size: 1rem;         /* Consistent text size */
+  color: #555;             /* Softer color for text */
+  margin: 0;               /* Remove extra spacing */
+}
