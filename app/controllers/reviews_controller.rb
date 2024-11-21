@@ -8,7 +8,8 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @card = Card.find(params[:card_id])
     @review.card = @card
-    if @review.save
+    @review.user = current_user
+    if @review.save!
       redirect_to card_path(@review.card), notice: 'Review was successfully created.'
     else
       @reviews = @card.reviews
