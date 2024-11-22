@@ -4,21 +4,14 @@
       <%= image_tag "clipart389400.png", width: 150 %>
     </div>
   <h2 class="text-center"style="margin-top: -27px;"><%= image_tag "pokemoncardtext.png", width: 300, height: 100 %></h2>
-    <% if logged_in? %>
-      <h3>Hey, <strong><%= current_user.username %></strong> 🫡</h3>
-      <p>Browse the latest cards available, from our top-notch vendors!</p>
-    <% else %>
-      <p>Welcome, Guest! Login to rent cards</p>
-    <% end %>
   </div>
-
 
   <div class="container">
     <div class="row">
       <% @cards.each do |card| %>
         <div class="col-md-3 mb-4">
           <%= link_to card_path(card) do %>
-            <div class="card h-100 bg-white">
+            <div class="card-body-index h-100 py-3 px-3">
               <div class="card-body">
                 <div class ="img-fluid">
                 <%= cl_image_tag card.photo.key, width: 400, crop: :fill, class:"index_images" %>
@@ -36,4 +29,6 @@
       <% end %>
     </div>
   </div>
+</body>
+
 </body>
