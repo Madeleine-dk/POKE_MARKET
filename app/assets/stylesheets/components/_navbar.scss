@@ -18,8 +18,9 @@
 
 .navbar-poke .navbar-brand img {
   width: 150px;
-  height: auto;
+  height: 50px;
   border-radius: 5px;
+  margin-top: 2px;
 }
 
 .navbar-poke .navbar-nav .btn-login {
@@ -75,11 +76,12 @@
   padding: 20px 0;
 }
 .Profile_rounded {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid #333;
+  border: 2px solid #ffffff;
+  margin-left:20px;
 }
 
 .moving-gif {
@@ -137,7 +139,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.btn-success {
+#search-btn {
   display: inline-block;
   text-align: center;
   padding: 12px 20px;
