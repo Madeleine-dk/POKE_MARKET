@@ -29,17 +29,28 @@
                                 wrapper_html: { class: "form-group mb-0 flex-grow-1" },
                                 input_html: { class: "form-control review-body", data: { controller: "datepicker" } } %>
                   </div>
-                  <%= f.submit "Rent", class: "btn draw-border" %>
-                <% end %>
+
+                    <%= f.submit "Rent", class: "btn draw-border" %>
+
+                  <% end %>
+
+              <% if logged_in? && @card.user == current_user %>
+  <div class="d-flex justify-content-start gap-2">
+    <%= button_to 'Delete', card_path(@card), method: :delete, data: { confirm: 'Are you sure you want to delete this card?' }, class: 'btn btn-delete' %>
+  </div>
+<% end %>
+            </div>
             <% else %>
               <%= link_to new_user_session_path do %>
                 <button class="btn btn-login me-2" type="button">Login</button>
               <% end %>
           <% end %>
+
+
           </div>
         </div>
     </div>
-    
+
     <div class= "bg-white my-4 boxes">
       <div class="pt-2 pb-4 px-4">
       <div class="my-2">
