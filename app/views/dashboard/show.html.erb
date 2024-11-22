@@ -1,36 +1,55 @@
+<h2 class="text-center"style="margin-top: 20px;"><%= image_tag "Your-Rented-Cards-11-22-2024.png", width: 300, height: 100 %></h2>
 
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8 col-sm-10">
-      <div class="card shadow-lg border-0">
-        <div class="card-header bg-white text-black text-center">
+<div class="container">
+  <div class="row">
+      <% if @rented_cards.any? %>
+        <% @rented_cards.each do |card| %>
+        <div class="col-md-3 mb-4">
+          <div class="card h-100 bg-white">
+            <div class="card-body">
+              <div class ="img-fluid">
+              <%= cl_image_tag card.photo.key, width: 400, crop: :fill, class:"card_image" %>
+              </div>
+              <div>
+                 <h3 class="card-title my-2 pt-3"><strong><%= card.title %></strong></h3>
+                  <p class="card-text"><strong>Price: </strong><strong><%= card.ppd %>€</strong> per day</p>
+                  <p class="card-text"><strong>Vendor: </strong><u><%= card.user.username %></u></p>
+               </div>
+            </div>
+    </div>
+</div>
 
-          <h2>Cards You've Rented</h2>
-          <% if @rented_cards.any? %>
-            <ul>
-              <% @rented_cards.each do |card| %>
-                <li><strong><%= card.name %></strong>: <%= card.description %></li>
               <% end %>
-            </ul>
+
           <% else %>
             <p>You haven't rented any cards yet.</p>
           <% end %>
 
-          <h2>Cards You've Uploaded for Rent</h2>
+  <h2 class="text-center"style="margin-top: 20px;"><%= image_tag "Your-Cards-11-22-2024(1).png", width: 300, height: 100 %></h2>
+    <div class="container">
+    <div class="row">
           <% if @uploaded_cards.any? %>
-            <ul>
               <% @uploaded_cards.each do |card| %>
-                <li><strong><%= card.name %></strong>: <%= card.description %></li>
+              <div class="col-md-3 mb-4">
+          <div class="card h-100 bg-white">
+            <div class="card-body">
+              <div class ="img-fluid">
+                <%= cl_image_tag card.photo.key, width: 400, crop: :fill, class:"card_image" %>
+              </div>
+              <div>
+                <h3 class="card-title my-2 pt-3"><strong><%= card.title %></strong></h3>
+                <p class="card-text"><strong>Price: </strong><strong><%= card.ppd %>€</strong> per day</p>
+                <p class="card-text"><strong>Vendor: </strong><u><%= card.user.username %></u></p>
+            </div>
+          </div>
+        </div>
+      </div>
               <% end %>
-            </ul>
+
           <% else %>
             <p>You haven't uploaded any cards for rent yet.</p>
           <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-8 col-sm-10 text-center">

@@ -14,12 +14,13 @@
 }
 
 .floating-image-container {
-  position: relative; /* Keeps the image container positioned relative to the page */
-  width: 100%;        /* Full-width container */
-  text-align: center; /* Centers the image horizontally */
+  position: relative;
+  width: 100%;
+  text-align: center;
   animation: bounce 3s infinite ease-in-out;
   margin-bottom: -10px;
- /* Adjust to position the image vertically */
+  margin-top: 20px;
+
 }
 
 
