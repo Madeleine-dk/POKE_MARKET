@@ -1,0 +1,40 @@
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-white text-black text-center">
+
+          <h2>Cards You've Rented</h2>
+          <% if @rented_cards.any? %>
+            <ul>
+              <% @rented_cards.each do |card| %>
+                <li><strong><%= card.name %></strong>: <%= card.description %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You haven't rented any cards yet.</p>
+          <% end %>
+
+          <h2>Cards You've Uploaded for Rent</h2>
+          <% if @uploaded_cards.any? %>
+            <ul>
+              <% @uploaded_cards.each do |card| %>
+                <li><strong><%= card.name %></strong>: <%= card.description %></li>
+              <% end %>
+            </ul>
+          <% else %>
+            <p>You haven't uploaded any cards for rent yet.</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-sm-10 text-center">
+    <%= image_tag "gengar.gif", width: 300, height: 200 %>
+    </div>
+  </div>
+</div>
