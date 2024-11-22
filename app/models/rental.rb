@@ -1,5 +1,5 @@
 class Rental < ApplicationRecord
-  belongs_to :user, counter_cache: true
+  belongs_to :user
   belongs_to :card
 
   validates :start_date, :end_date, presence: true

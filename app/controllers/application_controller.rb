@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_user, :logged_in?
+  add_flash_types :info, :error, :success
 
   def logged_in?
     !!current_user

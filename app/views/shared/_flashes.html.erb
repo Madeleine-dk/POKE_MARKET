@@ -1,0 +1,17 @@
+<% if success %>
+  <div class="alert bg-success bg-gradient text-white alert-info alert-dismissible fade show m-1" role="alert">
+    <%= success %>
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="alert bg-danger bg-gradient text-white alert-warning alert-dismissible fade show m-1" role="alert">
+    <%= alert %>
+    <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
