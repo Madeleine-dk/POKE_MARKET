@@ -104,3 +104,47 @@
 .btn-signup {
   background-color: #f3a7b8;
 }
+
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+
+.btn-upload, .btn-dashboard {
+  background-color: #1EDD88;
+  color: #333;
+  border: 2px solid #1EDD88;
+}
+
+.btn-upload:hover, .btn-dashboard:hover {
+  background-color: #1EDD88;
+  color: #555;
+  border-color: #888;
+}
+
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+  display: inline-block;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
